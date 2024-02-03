@@ -9,6 +9,10 @@ const Signup = () => {
   const [password, setPassword] = useState("")
   const [visible, setVisible] = useState(false)
   const [avatar, setAvatar] = useState(null)
+  const handleFileInputChange =(e)=>{
+    const file=e.target.files[0];
+    setAvatar(file)
+  }
   return (
     <div className='min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8'>
         <div className='sm:mx-auto sm:w-full sm:max-w-md'>
@@ -102,6 +106,7 @@ const Signup = () => {
                     name="avatar"
                     id="file-input"
                     accept=".jpg,.jpeg,.png"
+                    onChange={handleFileInputChange}
                     
                     className="sr-only"
                   />
