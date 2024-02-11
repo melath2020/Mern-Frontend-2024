@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link,  useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import styles from "../../styles/styles";
 import axios from 'axios'
@@ -13,7 +13,7 @@ const Signup = () => {
   const [password, setPassword] = useState("")
   const [visible, setVisible] = useState(false)
   const [avatar, setAvatar] = useState(null)
-  const navigate= useNavigate()
+  
   const handleFileInputChange =(e)=>{
     const file=e.target.files[0];
     setAvatar(file)
