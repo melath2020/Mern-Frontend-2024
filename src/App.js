@@ -16,6 +16,7 @@ const App = () => {
     <div>
     <BrowserRouter>
     <Routes>
+    <Route path='/' element={<HomePage/>}/>
     <Route path='/login' element={<LoginPage/>}/>
     <Route path='/sign-up' element={<SignupPage/>}/>
     <Route path='/activation/:activation_token' element={<ActivationPage/>}/>
