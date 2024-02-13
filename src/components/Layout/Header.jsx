@@ -3,6 +3,7 @@ import styles from '../../styles/styles'
 import { Link } from 'react-router-dom'
 import { AiOutlineSearch } from 'react-icons/ai';
 import { categoriesData, productData } from "../../static/data";
+import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 const Header = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [searchData, setSearchData] = useState(null);
@@ -67,8 +68,19 @@ const Header = () => {
                   </div>
                 ) : null}
               </div>
+
+              <div className={`${styles.button}`}>
+                <Link to="/seller">
+                  <h1 className="text-[#fff] flex items-center">
+                    Become Seller
+                    <IoIosArrowForward className="ml-1" />
+                  </h1>
+                </Link>
+              </div>
             
          </div>
+
+         
       
     </div>
   )
