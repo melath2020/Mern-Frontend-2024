@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styles from '../../../styles/styles';
 import Ratings from '../../Products/Ratings';
 import { AiFillHeart, AiOutlineEye, AiOutlineHeart, AiOutlineShoppingCart } from 'react-icons/ai';
-// import ProductDetailsCard from '../ProductDetailsCard/ProductDetailsCard';
+import ProductDetailsCard from '../ProductDetailsCard/ProductDetailsCard';
 
 
 const ProductCard = ({ data,isEvent }) => {
@@ -101,8 +101,8 @@ const ProductCard = ({ data,isEvent }) => {
               title="Add to Cart"
             />
             {
-              open ? (<></>
-                // <ProductDetailsCard open={open} setOpen={setOpen} data={data}/>
+              open ? (<>
+                <ProductDetailsCard open={open} setOpen={setOpen} data={data}/></>
               ): null
             }
           </div>
