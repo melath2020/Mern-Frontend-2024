@@ -24,7 +24,7 @@ const BestDeals = () => {
            {
             data && data?.length !== 0 &&(
               <>
-               {/* {data && data?.map((i, index) => <ProductCard data={i} key={index} />)} */}
+               {data && data?.map((i, index) => <ProductCard data={i} key={index} />)}
               </>
             )
            }
