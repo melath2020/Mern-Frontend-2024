@@ -18,7 +18,7 @@ import { backend_url } from "../../server";
 
 import { RxCross1 } from "react-icons/rx";
 const Header = ({ activeHeading }) => {
-  
+  const { isAuthenticated, user, loading } = useSelector((state) => state.user);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchData, setSearchData] = useState(null);
   const [active, setActive] = useState(false);
@@ -156,6 +156,7 @@ const Header = ({ activeHeading }) => {
             </div>
           </div>
           <div className={`${styles.noramlFlex}`}>
+        
             <div className="relative cursor-pointer mr-[15px]">
               <AiOutlineShoppingCart
                 onClick={() => setOpenCart(true)}
@@ -168,14 +169,21 @@ const Header = ({ activeHeading }) => {
             </div>
           </div>
           <div className={`${styles.noramlFlex}`}>
-            <div className="relative cursor-pointer mr-[15px]">
-          
-             
-                <Link to="/login">
-                  <CgProfile size={30} color="rgb(255 255 255 /83%)" />
-                </Link>
-             
-            </div>
+          <div className="relative cursor-pointer mr-[15px]">
+                    {isAuthenticated ? (
+                      <Link to="/profile">
+                        <img
+                          src={`${backend_url}${user.avatar}`}
+                          className="w-[35px] h-[35px] rounded-full"
+                          alt=""
+                        />
+                      </Link>
+                    ) : (
+                      <Link to="/login">
+                        <CgProfile size={30} color="rgb(255 255 255 /83%)" />
+                      </Link>
+                    )}
+                  </div>
           </div>
 
          
