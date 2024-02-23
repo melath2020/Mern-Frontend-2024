@@ -33,6 +33,7 @@ const App = () => {
             path="/activation/:activation_token"
             element={<ActivationPage />}
           />
+        <Route path='/products' element={<ProductsPage/>}/>
         </Routes>
       </BrowserRouter>
 
