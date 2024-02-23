@@ -34,6 +34,8 @@ const App = () => {
             element={<ActivationPage />}
           />
         <Route path='/products' element={<ProductsPage/>}/>
+        <Route path='/events' element={<EventsPage/>}/>
+        <Route path='/faq' element={<FAQPage/>}/>
         </Routes>
       </BrowserRouter>
 
