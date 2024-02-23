@@ -17,14 +17,18 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Store from "./redux/store";
 import { loadUser } from "./redux/actions/user";
+import { useSelector } from "react-redux";
 
 const App = () => {
+  const {  loading } = useSelector((state) => state.user);
   useEffect(() => {
     Store.dispatch(loadUser());
   }, []);
   return (
     <div>
-      <BrowserRouter>
+      <>
+      {loading?null:(<>
+        <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
@@ -39,6 +43,9 @@ const App = () => {
         <Route path='/faq' element={<FAQPage/>}/>
         </Routes>
       </BrowserRouter>
+      </>)}
+      </>
+   
 
       <ToastContainer
         position="top-right"
