@@ -17,6 +17,8 @@ import { useSelector } from "react-redux";
 import { backend_url } from "../../server";
 
 import { RxCross1 } from "react-icons/rx";
+import Wishlist from "../Wishlist/Wishlist";
+import Cart from "../Cart/Cart";
 const Header = ({ activeHeading }) => {
   const { isAuthenticated, user, loading } = useSelector((state) => state.user);
   const [searchTerm, setSearchTerm] = useState("");
@@ -185,6 +187,16 @@ const Header = ({ activeHeading }) => {
                     )}
                   </div>
           </div>
+           {/* cart popup */}
+           {openCart ? <Cart setOpenCart={setOpenCart} /> : null}
+
+          {/* /* wishlist popup */}
+          {openWishlist ? <Wishlist openWishlist={openWishlist} /> : null}
+
+{/* wishlist popup */}
+{openWishlist ? (
+  <Wishlist setOpenWishlist={setOpenWishlist} />
+) : null}
 
          
         </div>
