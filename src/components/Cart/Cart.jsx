@@ -15,7 +15,7 @@ const Cart = ({ setOpenCart }) => {
     {
       name: "Iphone 14 Pro max ssd and 8gb ram silver color",
       description: "test",
-      price: 245,
+      price: 245, 
     },
     {
       name: "Iphone 14 Pro max ssd and 8gb ram silver color",
