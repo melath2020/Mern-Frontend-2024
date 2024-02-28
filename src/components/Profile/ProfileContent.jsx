@@ -386,8 +386,8 @@ const ProfileContent = ({ active }) => {
         headerName: "Status",
         minWidth: 130,
         flex: 0.7,
-        valueGetter: (params) =>
-        `${params.row.status || ''} ${params.row.status || ''}`,
+        // valueGetter: (params) =>
+        // `${params.row.status || ''} ${params.row.status || ''}`,
       },
       {
         field: "itemsQty",
