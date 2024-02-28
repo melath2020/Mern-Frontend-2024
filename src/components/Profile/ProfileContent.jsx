@@ -5,8 +5,8 @@ import { AiOutlineCamera,AiOutlineArrowRight,
   AiOutlineDelete, } from "react-icons/ai";
 import styles from "../../styles/styles";
 import { Link } from "react-router-dom";
-// import { DataGrid } from "@material-ui/data-grid";
-// import { Button } from "@material-ui/core";
+import { DataGrid } from '@mui/x-data-grid';
+import Button from '@mui/material/Button';
 import { MdOutlineTrackChanges} from "react-icons/md";
 import { RxCross1 } from "react-icons/rx";
 
@@ -204,12 +204,10 @@ const ProfileContent = ({ active }) => {
         headerName: "Status",
         minWidth: 130,
         flex: 0.7,
-        cellClassName: (params) => {
-          return params.getValue(params.id, "status") === "Delivered"
-            ? "greenColor"
-            : "redColor";
-        },
-      },
+        // valueGetter: (params) =>
+        // `${params.row.status || ''} ${params.row.status || ''}`,
+    },
+      
       {
         field: "itemsQty",
         headerName: "Items Qty",
@@ -237,9 +235,9 @@ const ProfileContent = ({ active }) => {
           return (
             <>
               <Link to={`/user/order/${params.id}`}>
-                {/* <Button>
+                <Button>
                   <AiOutlineArrowRight size={20} />
-                </Button> */}
+                </Button>
               </Link>
             </>
           );
@@ -263,13 +261,13 @@ const ProfileContent = ({ active }) => {
     
       return (
         <div className="pl-8 pt-1">
- {/* <DataGrid
+ <DataGrid
         rows={row}
         columns={columns}
         pageSize={10}
         disableSelectionOnClick
         autoHeight
-      /> */}
+      />
         </div>
 
       )
@@ -299,12 +297,11 @@ const ProfileContent = ({ active }) => {
         headerName: "Status",
         minWidth: 130,
         flex: 0.7,
-        cellClassName: (params) => {
-          return params.getValue(params.id, "status") === "Delivered"
-            ? "greenColor"
-            : "redColor";
-        },
-      },
+        // valueGetter: (params) =>
+        // `${params.row.status || ''} ${params.row.status || ''}`,
+    },
+    
+      
       {
         field: "itemsQty",
         headerName: "Items Qty",
@@ -332,9 +329,9 @@ const ProfileContent = ({ active }) => {
           return (
             <>
               <Link to={`/user/order/${params.id}`}>
-                {/* <Button>
+                <Button>
                   <AiOutlineArrowRight size={20} />
-                </Button> */}
+                </Button>
               </Link>
             </>
           );
@@ -355,13 +352,13 @@ const ProfileContent = ({ active }) => {
 
     return(
       <div className="pl-8 pt-1">
- {/* <DataGrid
+ <DataGrid
         rows={row}
         columns={columns}
         pageSize={10}
         disableSelectionOnClick
         autoHeight
-      /> */}
+      />
       </div>
     )
   }
@@ -389,11 +386,8 @@ const ProfileContent = ({ active }) => {
         headerName: "Status",
         minWidth: 130,
         flex: 0.7,
-        cellClassName: (params) => {
-          return params.getValue(params.id, "status") === "Delivered"
-            ? "greenColor"
-            : "redColor";
-        },
+        valueGetter: (params) =>
+        `${params.row.status || ''} ${params.row.status || ''}`,
       },
       {
         field: "itemsQty",
@@ -422,9 +416,9 @@ const ProfileContent = ({ active }) => {
           return (
             <>
               <Link to={`/user/order/${params.id}`}>
-                {/* <Button>
+                <Button>
                   <MdOutlineTrackChanges size={20} />
-                </Button> */}
+                </Button>
               </Link>
             </>
           );
@@ -445,13 +439,13 @@ const ProfileContent = ({ active }) => {
 
     return(
       <div className="pl-8 pt-1">
- {/* <DataGrid
+ <DataGrid
         rows={row}
         columns={columns}
         pageSize={10}
         disableSelectionOnClick
         autoHeight
-      /> */}
+      />
       </div>
     )
   }
