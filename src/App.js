@@ -11,6 +11,8 @@ import {
   FAQPage,
   ProductDetailsPage,
   ProfilePage,
+  CheckoutPage,
+  ShopCreatePage
 } from "./Routes";
 import "./App.css";
 import { ToastContainer } from "react-toastify";
@@ -19,6 +21,7 @@ import Store from "./redux/store";
 import { loadUser } from "./redux/actions/user";
 import { useSelector } from "react-redux";
 import ProtectedRoute from './ProtectedRoute'
+
 
 const App = () => {
   const {  loading } = useSelector((state) => state.user);
@@ -43,9 +46,14 @@ const App = () => {
         <Route path='/product/:name' element={<ProductDetailsPage />}/>
         <Route path='/events' element={<EventsPage/>}/>
         <Route path='/faq' element={<FAQPage/>}/>
+        <Route path='/checkout' element={<ProtectedRoute>
+          <CheckoutPage/>
+        </ProtectedRoute>}/>
         <Route path='/profile' element={<ProtectedRoute>
           <ProfilePage/>
         </ProtectedRoute>}/>
+         {/* shop Routes */}
+         <Route path="/shop-create" element={<ShopCreatePage />} />
         </Routes>
       </BrowserRouter>
       </>)}

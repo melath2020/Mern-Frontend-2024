@@ -8,4 +8,6 @@ import FAQPage from "./pages/FAQPage.jsx";
 import BestSellingPage from './pages/BestSellingPage'
 import ProductDetailsPage from "./pages/ProductDetailsPage.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
-export { LoginPage,SignupPage,ActivationPage ,HomePage,ProductsPage,EventsPage,FAQPage,BestSellingPage,ProductDetailsPage,ProfilePage }
+import CheckoutPage from "./pages/CheckoutPage";
+import ShopCreatePage from "./pages/ShopCreatePage.jsx";
+export { LoginPage,SignupPage,ActivationPage ,HomePage,ProductsPage,EventsPage,FAQPage,BestSellingPage,ProductDetailsPage,ProfilePage,CheckoutPage,ShopCreatePage }
