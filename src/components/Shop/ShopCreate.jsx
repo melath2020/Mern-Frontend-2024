@@ -19,44 +19,47 @@ const ShopCreate = () => {
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
 
-  const handleSubmit = async (e) => {
+  
+
+  const handleSubmit =async(e)=>{
     e.preventDefault();
-
-    axios
-      .post(`${server}/shop/create-shop`, {
-        name,
-        email,
-        password,
-        avatar,
-        zipCode,
-        address,
-        phoneNumber,
-      })
-      .then((res) => {
-        toast.success(res.data.message);
-        setName("");
-        setEmail("");
-        setPassword("");
-        setAvatar();
-        setZipCode();
-        setAddress("");
-        setPhoneNumber();
-      })
-      .catch((error) => {
-        toast.error(error.response.data.message);
-      });
-  };
-
-  const handleFileInputChange = (e) => {
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      if (reader.readyState === 2) {
-        setAvatar(reader.result);
+   
+    const config={
+      headers:{
+        "Content-Type":"multipart/form-data"
       }
     };
+    const newForm=new FormData();
 
-    reader.readAsDataURL(e.target.files[0]);
+    newForm.append("file",avatar);
+    newForm.append("name",name);
+    newForm.append("email",email);
+    newForm.append("password",password);
+    newForm.append("zipCode",zipCode);
+    newForm.append("address",address);
+    newForm.append("phoneNumber",phoneNumber);
+
+    axios.post(`${server}/shop/create-shop`,newForm,config).then((res)=>{
+      if(res.data.success===true){
+        alert(res.message)
+        toast.success(res.data.message)
+        setName('')
+        setEmail('')
+        setPassword('')
+        setAvatar()
+        setZipCode("")
+        setAddress("")
+        setPhoneNumber("")
+      }
+      
+    }).catch((error)=>{
+      console.log(error)
+      toast.error(error.response?.data?.message? error.response.data.message:"Check your Internet connection")
+    })
+  }
+  const handleFileInputChange = (e) => {
+    const file=e.target.files[0];
+    setAvatar(file)
   };
 
   return (
