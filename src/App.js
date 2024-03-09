@@ -13,7 +13,8 @@ import {
   ProfilePage,
   CheckoutPage,
   ShopCreatePage,
-  SellerActivationPage 
+  SellerActivationPage ,
+  ShopLoginPage
 } from "./Routes";
 import "./App.css";
 import { ToastContainer } from "react-toastify";
@@ -22,6 +23,7 @@ import Store from "./redux/store";
 import { loadUser } from "./redux/actions/user";
 import { useSelector } from "react-redux";
 import ProtectedRoute from './ProtectedRoute'
+
 
 
 const App = () => {
@@ -59,6 +61,7 @@ const App = () => {
         </ProtectedRoute>}/>
          {/* shop Routes */}
          <Route path="/shop-create" element={<ShopCreatePage />} />
+         <Route path="/shop-login" element={<ShopLoginPage />} />
         </Routes>
       </BrowserRouter>
       </>)}

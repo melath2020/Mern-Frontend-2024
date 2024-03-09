@@ -21,7 +21,7 @@ const ActivationPage = () => {
             }
             activationEmail()
         }
-    }, [activation_token])
+    }, [])
   return (
     <div
       style={{
