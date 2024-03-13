@@ -9,7 +9,7 @@ const ShopLoginPage = () => {
 
   useEffect(() => {
     if(isSeller === true){
-      navigate(`/shop/${seller._id}`);
+      navigate(`/shop/${seller?._id}`);
     }
   }, [])
   return (

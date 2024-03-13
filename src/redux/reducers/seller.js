@@ -2,7 +2,7 @@ import { createReducer } from "@reduxjs/toolkit";
 
 
 const initialState = {
-    isAuthenticated: false,
+    isSeller: false,
   };
 
   
@@ -11,14 +11,14 @@ const initialState = {
       state.isLoading = true;
     },
     LoadSellerSuccess: (state, action) => {
-      state.isAuthenticated = true;
+      state.isSeller = true;
       state.isLoading = false;
       state.seller = action.payload;
     },
     LoadSellerFail: (state, action) => {
       state.isLoading = false;
       state.error = action.payload;
-      state.isAuthenticated = false;
+      state.isSeller = false;
     },
     clearErrors: (state) => {
       state.error = null;
