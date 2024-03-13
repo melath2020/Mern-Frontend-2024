@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import {
   LoginPage,
   SignupPage,
@@ -20,7 +20,7 @@ import "./App.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Store from "./redux/store";
-import { loadUser } from "./redux/actions/user";
+import { loadSeller, loadUser } from "./redux/actions/user";
 import { useSelector } from "react-redux";
 import ProtectedRoute from './ProtectedRoute'
 
@@ -28,13 +28,17 @@ import ProtectedRoute from './ProtectedRoute'
 
 const App = () => {
   const {  loading } = useSelector((state) => state.user);
+  const { isLoading, isSeller } = useSelector((state) => state.seller);
+
   useEffect(() => {
     Store.dispatch(loadUser());
+    Store.dispatch(loadSeller());
+  
   }, []);
   return (
     <div>
       <>
-      {loading?null:(<>
+      {loading || isLoading?null:(<>
         <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
