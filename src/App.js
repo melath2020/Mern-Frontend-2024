@@ -23,6 +23,8 @@ import Store from "./redux/store";
 import { loadSeller, loadUser } from "./redux/actions/user";
 import { useSelector } from "react-redux";
 import ProtectedRoute from './ProtectedRoute'
+import { ShopHomePage } from "./ShopRoutes";
+import SellerProtectedRoute from "./SellerProtectedRoute";
 
 
 
@@ -66,6 +68,10 @@ const App = () => {
          {/* shop Routes */}
          <Route path="/shop-create" element={<ShopCreatePage />} />
          <Route path="/shop-login" element={<ShopLoginPage />} />
+         <Route path="/shop/:id" element={<SellerProtectedRoute>
+          <ShopHomePage />
+         </SellerProtectedRoute>
+        } />
         </Routes>
       </BrowserRouter>
       </>)}
