@@ -40,7 +40,7 @@ const App = () => {
   return (
     <div>
       <>
-      {loading || isLoading?null:(<>
+    <>
         <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -74,7 +74,7 @@ const App = () => {
         } />
         </Routes>
       </BrowserRouter>
-      </>)}
+      </>
       </>
    
 
