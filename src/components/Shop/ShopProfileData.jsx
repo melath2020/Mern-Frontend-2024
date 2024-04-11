@@ -3,7 +3,7 @@ import React from "react";
 const ShopProfileData = ({ isOwner }) => {
   return (
     <div className="w-full">
-      <div className="flex w-full items-center justify-between">
+      <div className="flex w-full items-center ">
     
           <div className="flex items-center">
             <h5
