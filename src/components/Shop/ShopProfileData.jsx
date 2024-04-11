@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ShopProfileData = () => {
+const ShopProfileData = ({ isOwner }) => {
   return (
     <div>
       sho

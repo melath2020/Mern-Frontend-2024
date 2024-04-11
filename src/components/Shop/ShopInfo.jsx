@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ShopInfo = () => {
+const ShopInfo = ({ isOwner }) => {
   return (
     <div>
       
